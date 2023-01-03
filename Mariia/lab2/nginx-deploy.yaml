@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: mzlabs
+  name: nginx-deployment
+  labels:
+    app: nginx
+    role: webserver
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: webserver
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+        role: webserver
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
