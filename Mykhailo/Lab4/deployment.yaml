@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myinitlab
+  namespace: lab
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      - name: busybox
+        image: nginx
+        command: 
+          - sleep 
+          - "500"
+      initContainers:
+      - name: init-myservice
+        image: busybox
+        envFrom:
+        - configMapRef:
+            name: ruslan
+        - secretRef:
+            name: mysecret
+        command: ['sh', '-c', 'echo $USER $PASSWORD']
