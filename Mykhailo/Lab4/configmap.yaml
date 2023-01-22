@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ruslan
+  namespace: lab
+data:
+  USER: Ruslan
