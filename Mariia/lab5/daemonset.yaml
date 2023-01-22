@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: mylogs
+  namespace: lab
+spec:
+  selector:
+    matchLabels:
+      name: lab5
+  template:
+    metadata:
+      labels:
+        name: lab5
+    spec:
+      containers:
+      - name: bitnami-fluent-bit
+        image: bitnami/fluent-bit
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+      initContainers:
+      - name: busybox
+        image: busybox
+        command: ['sh', '-c', 'ls /']
