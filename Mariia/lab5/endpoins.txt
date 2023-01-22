@@ -1,0 +1,2 @@
+NAME     ENDPOINTS       AGE
+mylogs   172.17.0.7:80   18m
