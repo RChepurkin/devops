@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      tier: frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        tier: frontend
+      annotations:
+        AppVersion: "3.4"
+    spec:
+      containers:
+      - name: web-dep
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+        
