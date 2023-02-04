@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: mylogs
+  namespace: lab
+spec:
+  selector:
+    matchLabels:
+      name: nine
+  template:
+    metadata:
+      labels:
+        name: nine
+    spec:
+      containers:
+      - name: bitnami-fluent-bit
+        image: bitnami/fluent-bit
+      initContainers:
+      - name: busybox
+        image: busybox
+        command: 
+        - sleep
+        - "20"
+      tolerations:
+      - key: "pipelines"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"  
