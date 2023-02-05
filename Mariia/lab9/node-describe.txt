@@ -1,0 +1,118 @@
+Name:               scheduling-m02
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=scheduling-m02
+                    kubernetes.io/os=linux
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/cri-dockerd.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sun, 05 Feb 2023 19:18:58 +0100
+Taints:             pipelines=true:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  scheduling-m02
+  AcquireTime:     <unset>
+  RenewTime:       Sun, 05 Feb 2023 19:55:00 +0100
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Sun, 05 Feb 2023 19:54:52 +0100   Sun, 05 Feb 2023 19:18:58 +0100   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Sun, 05 Feb 2023 19:54:52 +0100   Sun, 05 Feb 2023 19:18:58 +0100   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Sun, 05 Feb 2023 19:54:52 +0100   Sun, 05 Feb 2023 19:18:58 +0100   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Sun, 05 Feb 2023 19:54:52 +0100   Sun, 05 Feb 2023 19:19:08 +0100   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.67.3
+  Hostname:    scheduling-m02
+Capacity:
+  cpu:                4
+  ephemeral-storage:  61255492Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             2033396Ki
+  pods:               110
+Allocatable:
+  cpu:                4
+  ephemeral-storage:  61255492Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             2033396Ki
+  pods:               110
+System Info:
+  Machine ID:                 996614ec4c814b87b7ec8ebee3d0e8c9
+  System UUID:                8dbd5c17-dc4a-4a72-9fc1-374ac2da4b6b
+  Boot ID:                    135b9ed6-bc75-43a3-afdf-1e52cb6379ed
+  Kernel Version:             5.10.76-linuxkit
+  OS Image:                   Ubuntu 20.04.5 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://20.10.20
+  Kubelet Version:            v1.25.3
+  Kube-Proxy Version:         v1.25.3
+PodCIDR:                      10.244.1.0/24
+PodCIDRs:                     10.244.1.0/24
+Non-terminated Pods:          (8 in total)
+  Namespace                   Name                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                         ------------  ----------  ---------------  -------------  ---
+  kube-system                 kindnet-z9lts                100m (2%)     100m (2%)   50Mi (2%)        50Mi (2%)      7d1h
+  kube-system                 kube-proxy-xkckw             0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d1h
+  lab                         mylogs-ppnd2                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         23h
+  lab                         mywebapp-55f9f9b5f6-4tkrg    0 (0%)        0 (0%)      0 (0%)           0 (0%)         12m
+  lab                         mywebapp-55f9f9b5f6-bwzdw    0 (0%)        0 (0%)      0 (0%)           0 (0%)         12m
+  lab                         mywebapp-55f9f9b5f6-kbf2j    0 (0%)        0 (0%)      0 (0%)           0 (0%)         12m
+  lab                         mywebapp-55f9f9b5f6-sqsz6    0 (0%)        0 (0%)      0 (0%)           0 (0%)         12m
+  web                         nginx-scheduling-m02         0 (0%)        0 (0%)      0 (0%)           0 (0%)         36m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests   Limits
+  --------           --------   ------
+  cpu                100m (2%)  100m (2%)
+  memory             50Mi (2%)  50Mi (2%)
+  ephemeral-storage  0 (0%)     0 (0%)
+  hugepages-1Gi      0 (0%)     0 (0%)
+  hugepages-2Mi      0 (0%)     0 (0%)
+Events:
+  Type    Reason                   Age                From        Message
+  ----    ------                   ----               ----        -------
+  Normal  Starting                 43m                kube-proxy  
+  Normal  Starting                 35m                kube-proxy  
+  Normal  Starting                 24h                kube-proxy  
+  Normal  Starting                 46m                kube-proxy  
+  Normal  Starting                 24h                kube-proxy  
+  Normal  Starting                 24h                kube-proxy  
+  Normal  Starting                 46h                kube-proxy  
+  Normal  NodeAllocatableEnforced  24h                kubelet     Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientPID     24h (x8 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientPID
+  Normal  NodeHasSufficientMemory  24h (x9 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    24h (x8 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasNoDiskPressure
+  Normal  NodeHasNoDiskPressure    24h (x2 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     24h (x2 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientPID
+  Normal  Starting                 24h                kubelet     Starting kubelet.
+  Normal  NodeHasSufficientMemory  24h (x2 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientMemory
+  Normal  NodeAllocatableEnforced  24h                kubelet     Updated Node Allocatable limit across pods
+  Normal  NodeReady                24h                kubelet     Node scheduling-m02 status is now: NodeReady
+  Normal  NodeAllocatableEnforced  24h                kubelet     Updated Node Allocatable limit across pods
+  Normal  Starting                 24h                kubelet     Starting kubelet.
+  Normal  NodeHasSufficientPID     24h (x4 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientPID
+  Normal  NodeHasSufficientMemory  24h (x4 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    24h (x4 over 24h)  kubelet     Node scheduling-m02 status is now: NodeHasNoDiskPressure
+  Normal  NodeReady                24h                kubelet     Node scheduling-m02 status is now: NodeReady
+  Normal  NodeHasSufficientPID     46m (x2 over 46m)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientPID
+  Normal  Starting                 46m                kubelet     Starting kubelet.
+  Normal  NodeHasSufficientMemory  46m (x2 over 46m)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientMemory
+  Normal  NodeAllocatableEnforced  46m                kubelet     Updated Node Allocatable limit across pods
+  Normal  NodeHasNoDiskPressure    46m (x2 over 46m)  kubelet     Node scheduling-m02 status is now: NodeHasNoDiskPressure
+  Normal  NodeReady                46m                kubelet     Node scheduling-m02 status is now: NodeReady
+  Normal  NodeHasSufficientPID     43m (x4 over 43m)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientPID
+  Normal  Starting                 43m                kubelet     Starting kubelet.
+  Normal  NodeHasSufficientMemory  43m (x4 over 43m)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    43m (x4 over 43m)  kubelet     Node scheduling-m02 status is now: NodeHasNoDiskPressure
+  Normal  NodeAllocatableEnforced  43m                kubelet     Updated Node Allocatable limit across pods
+  Normal  NodeReady                43m                kubelet     Node scheduling-m02 status is now: NodeReady
+  Normal  Starting                 36m                kubelet     Starting kubelet.
+  Normal  NodeHasNoDiskPressure    36m (x2 over 36m)  kubelet     Node scheduling-m02 status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     36m (x2 over 36m)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced  36m                kubelet     Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientMemory  36m (x2 over 36m)  kubelet     Node scheduling-m02 status is now: NodeHasSufficientMemory
+  Normal  NodeReady                35m                kubelet     Node scheduling-m02 status is now: NodeReady

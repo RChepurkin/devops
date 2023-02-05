@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebapp
+  namespace: lab
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - scheduling-m02
+      containers:
+      - name: nginx
+        image: nginx
+      tolerations:
+      - key: "pipelines"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
