@@ -10,3 +10,4 @@ spec:
   selector:
     name: labs
   type: ClusterIP
+  
