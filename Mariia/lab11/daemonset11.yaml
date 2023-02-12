@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: webs
+  namespace: lab11
+spec:
+  selector:
+    matchLabels:
+      name: lab11
+  template:
+    metadata:
+      labels:
+        name: lab11
+    spec:
+      tolerations:
+      - key: "lab"
+        operator: "Equal"
+        value: "11"
+        effect: "NoSchedule"
+      containers:
+      - name: nginx
+        image: nginx
+      - name: bitnami-fluent-bit
+        image: bitnami/fluent-bit
+      initContainers:
+      - name: busybox
+        image: busybox
+        command:
+        - sleep
+        - "10"
