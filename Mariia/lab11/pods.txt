@@ -1,0 +1,5 @@
+NAME         READY   STATUS    RESTARTS   AGE    IP           NODE             NOMINATED NODE   READINESS GATES
+webs-467gw   2/2     Running   0          7m3s   10.244.2.3   scheduling-m03   <none>           <none>
+webs-95rxs   2/2     Running   0          7m3s   10.244.3.5   scheduling-m04   <none>           <none>
+webs-hzrdr   2/2     Running   0          7m3s   10.244.1.9   scheduling-m02   <none>           <none>
+webs-xgv45   2/2     Running   0          7m3s   10.244.0.4   scheduling       <none>           <none>
