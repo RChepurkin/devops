@@ -1,0 +1,5 @@
+NAME                     READY   STATUS    RESTARTS   AGE     IP           NODE             NOMINATED NODE   READINESS GATES
+myweb-7b765b7578-4djmp   1/1     Running   0          3m3s    10.244.2.7   scheduling-m03   <none>           <none>
+myweb-7b765b7578-77hm2   1/1     Running   0          3m20s   10.244.2.4   scheduling-m03   <none>           <none>
+myweb-7b765b7578-j2tlb   1/1     Running   0          3m5s    10.244.2.6   scheduling-m03   <none>           <none>
+myweb-7b765b7578-xn8ct   1/1     Running   0          3m20s   10.244.2.5   scheduling-m03   <none>           <none>
