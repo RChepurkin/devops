@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap12
+  namespace: lab12
+data:
+  index.html: |
+    <html>
+        <br>
+        <h1>Welcome</h1>
+        </br>
+        <h1>Hi! This is a configmap Index file </h1>
+    </html>

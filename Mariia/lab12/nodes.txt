@@ -1,0 +1,5 @@
+NAME             STATUS   ROLES           AGE   VERSION
+scheduling       Ready    control-plane   15d   v1.25.3
+scheduling-m02   Ready    <none>          38m   v1.25.3
+scheduling-m03   Ready    <none>          38m   v1.25.3
+scheduling-m04   Ready    <none>          38m   v1.25.3

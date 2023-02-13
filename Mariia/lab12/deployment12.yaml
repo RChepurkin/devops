@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb
+  namespace: lab12
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - scheduling-m03
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+          - containerPort: 80
+            name: lab12
+        volumeMounts:
+        - name: nginx-index-file
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-index-file
+        configMap:
+          name: configmap12
+      initContainers:
+      - name: busybox
+        image: busybox
+        command:
+        - sleep
+        - "10"
+      tolerations:
+      - key: "lab"
+        operator: "Equal"
+        value: "12"
+        effect: "NoSchedule"
