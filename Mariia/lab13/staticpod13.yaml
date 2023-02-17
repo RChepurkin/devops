@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static13
+  namespace: lab13
+  labels:
+    role: lab13
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  initContainers:
+  - name: busybox
+    image: busybox
+    command:
+    - sleep
+    - "10"
