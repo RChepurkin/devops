@@ -1,8 +1,4 @@
-ocker run -it --rm ubuntu /bin/bash
-
-vi /root/lab16.txt
-or
-vi ~/lab16.txt
+docker run -it --rm ubuntu /bin/bash
 
 apt-get update
 apt-get install vim
@@ -77,6 +73,6 @@ mv /tmp/lab16.txt /tmp/mylab15.sh
 or
 mv ../tmp/lab16.txt ../tmp/mylab15.sh
 
-rm -r /tmp/
+rm -r /tmp/*
 or
-rm -r ../tmp/
+rm -r ../tmp/*
