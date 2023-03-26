@@ -14,7 +14,7 @@ free -h
 
 df -h
 
-du -hd1 /var
+du -sh /var
 
 du -hd2 /etc/
 
@@ -34,9 +34,7 @@ tree var/log/ > root/tree.txt
 
 whereis tree
 
-rm /usr/bin/tree
-or
-rm usr/bin/tree
+apt remove tree
 
 apt install nano
 
