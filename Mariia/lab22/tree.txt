@@ -1,0 +1,11 @@
+/var/log/
+|-- alternatives.log
+|-- apt
+|   |-- eipp.log.xz
+|   |-- history.log
+|   `-- term.log
+|-- bootstrap.log
+|-- btmp
+|-- dpkg.log
+|-- faillog
+|-- lastlog
