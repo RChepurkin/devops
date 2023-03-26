@@ -31,13 +31,13 @@ ls -lh /var/ | awk '{print $4}' > /root/groups.txt
 or
 ls -lh var/ | awk '{print $4}' > root/groups.txt
 
-ls -lh /var/ | awk '{print $4}' | sed -i 's/root/mytest/gI' /root/proupsnew.txt
+ls -lh /var/ | awk '{print $4}' | sed 's/root/mytest/g' > /root/proupsnew.txt
 or
-ls -lh var/ | awk '{print $4}' | sed -i 's/root/mytest/gI' root/proupsnew.txt
+ls -lh var/ | awk '{print $4}' | sed 's/root/mytest/g' > root/proupsnew.txt
 
-ls -lh /var/ | awk '{print $4}' | sort  > /root/proupssort.txt
+ls -lh var/ | awk '{print $4}' | sed 's/root/mytest/g'| sort  > root/proupssort.txt
 or
-ls -lh var/ | awk '{print $4}' | sort  > root/proupssort.txt
+ls -lh /var/ | awk '{print $4}' | sed 's/root/mytest/g'| sort  > /root/proupssort.txt
 
 ls -lh /var/ | awk '{print $6}'| sort -r > /root/mod.txt
 or
