@@ -1,0 +1,14 @@
+ls: cannot access '/omar': No such file or directory
+root@110ad697920c:/# cat /root/stdout.txt 
+/var:
+backups
+cache
+lib
+local
+lock
+log
+mail
+opt
+run
+spool
+tmp
